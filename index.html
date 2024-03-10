@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cookie Akzeptieren</title>
+<title>Accept Cookies</title>
 <style>
     body, html {
         margin: 0;
@@ -48,17 +48,17 @@
 
 <div id="cookie-banner">
     <div id="cookie-content">
-        <h2>Cookie Hinweis</h2>
-        <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten.</p>
-        <button id="accept-cookie">Akzeptieren</button>
-        <button id="reject-cookie">Ablehnen</button>
+        <h2>Cookie Alert</h2>
+        <p>We use cookies to get you a better experience what you'll like and what you won't like.</p>
+        <button id="accept-cookie">ACCEPT</button>
+        <button id="reject-cookie">DECLINE</button>
     </div>
 </div>
 
 <div id="video-container">
     <video id="video" controls>
         <source src="/video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        Your Browser is too outdated.
     </video>
 </div>
 
@@ -81,7 +81,8 @@
 
     document.getElementById('reject-cookie').addEventListener('click', function() {
         document.getElementById('cookie-banner').style.display = 'none';
-        alert('Sie haben die Verwendung von Cookies abgelehnt. Bitte beachten Sie, dass einige Funktionen der Website möglicherweise nicht ordnungsgemäß funktionieren.');
+        alert('Declined.');
+        window.location.change("/you-declined-the-cookies");
     });
 
     document.addEventListener('fullscreenchange', function() {
