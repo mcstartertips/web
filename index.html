@@ -82,7 +82,7 @@
     document.getElementById('reject-cookie').addEventListener('click', function() {
         document.getElementById('cookie-banner').style.display = 'none';
         alert('Declined.');
-        window.location.change("/you-declined-the-cookies");
+        window.location.replace("/you-declined-the-cookies");
     });
 
     document.addEventListener('fullscreenchange', function() {
