@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accept Cookies</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    #cookie-banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 999;
+    }
+    #cookie-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<div id="cookie-banner">
+    <div id="cookie-content">
+        <h2>May I have Cookies? 🍪</h2>
+        <p>We use cookies, so we know what we can recommend to you.</p>
+        <button id="accept-cookie">ACCEPT</button>
+        <button id="reject-cookie">DECLINE</button>
+    </div>
+</div>
+
+<video id="video" style="display: none;" controls>
+    <source src="/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<script>
+    document.getElementById('accept-cookie').addEventListener('click', function() {
+        document.getElementById('cookie-banner').style.display = 'none';
+        document.getElementById('video').style.display = 'block';
+        document.getElementById('video').play();
+    });
+
+    document.getElementById('reject-cookie').addEventListener('click', function() {
+        document.getElementById('cookie-banner').style.display = 'none';
+        alert('You declined cookies. The page will not load, because we need cookies to be accepted. Sorry, but it is a rule of ours.');
+    });
+</script>
+
+</body>
+</html>
